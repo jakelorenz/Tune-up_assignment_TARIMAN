@@ -1,0 +1,215 @@
+import java.util.Scanner;
+public class First{
+
+public static void main(String [] args){
+int first=0;
+int second=0;
+int third=0;
+boolean flag;
+
+do{
+try{
+Scanner fI = new Scanner(System.in);
+System.out.println("Enter first number: ");
+ first=fI.nextInt();
+ flag=false;
+ }
+ catch(Exception e)
+ {
+System.out.println("Error!Please input an integer only ! ");
+flag=true;
+}
+}
+while(flag);
+
+
+do{
+try{
+Scanner sI = new Scanner(System.in);
+System.out.println("Enter second number: ");
+ second=sI.nextInt();
+ flag=false;
+ }
+ catch(Exception e)
+ {
+System.out.println("Error!Please input an integer only !");
+flag=true;
+}
+}
+while(flag);
+
+
+do{
+try{
+Scanner tI = new Scanner(System.in);
+System.out.println("Enter third number: ");
+ third=tI.nextInt();
+ flag=false;
+ }
+ catch(Exception e)
+ {
+System.out.println("Error!Please input an integer only ! ");
+flag=true;
+}
+}
+while(flag);
+
+
+System.out.print("The smallest number is: "+ smallest(first,second,third));
+}
+
+public static int smallest(int first,int second,int third)
+{
+    if(first>second)
+    first=second;
+    
+   
+    if(first>third)
+    first=third;
+    
+    
+    if(second>third)
+      second=third;
+      
+   return first;
+    }
+ 
+
+}
+
+
+
+
+**********************************************************************************************************************************
+
+import java.util.Scanner;
+public class Second{
+
+public static void main(String [] args){
+
+int number=0;
+boolean flag;
+
+do{
+try{
+Scanner input = new Scanner(System.in);
+System.out.println("Enter an Integer: ");
+while(true){
+number=input.nextInt();
+if(number<=6)
+break;
+System.out.println("Error! Please input a value from 0-6!");
+System.out.println("Enter an integer again:");
+}
+flag=false;
+}
+catch(Exception e)
+{
+System.out.println("Error!Please input an integer!");
+flag=true;
+ }
+}
+while(flag);
+
+
+if(number==0){
+System.out.print("Sunday");
+}
+else if(number==1){
+System.out.print("Monday");
+}
+else if(number==2){
+System.out.print("Tuesday");
+}
+else if(number==3){
+System.out.print("Wednesday");
+}
+else if(number==4){
+System.out.print("Thursday");
+}
+else if(number==5){
+System.out.print("Friday");
+}
+else if(number==6){
+System.out.print("Saturday");
+  }
+ }
+}
+***************************************************************************************************************************
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class third{
+
+
+public static void main(String [] args){
+
+double hours=0;
+
+boolean flag;
+System.out.println("car-PHP20 per hour \nbus-PHP35 per hour \ntruck-PHP50 per hour");
+
+Scanner input = new Scanner(System.in);
+DecimalFormat decimal = new DecimalFormat("PHP##.00");
+
+System.out.println("Enter Vehicle Type (c-car, b-bus, c-truck):");
+
+String vehicleType=input.next();
+char vT=vehicleType.charAt(0);
+
+System.out.println("Parking Duration(hrs): ");
+hours=input.nextDouble();
+
+if(vT=='c'||vT=='C'){
+double carPark=carPC(hours);
+System.out.println("PARKING CHARGE : "+decimal.format(carPark));
+}
+
+else if(vT=='b'||vT=='B'){
+double busPark=busPC(hours);
+System.out.println("PARKING CHARGE : "+decimal.format(busPark));
+}
+
+else if(vT=='t'||vT=='T'){
+double truckPark=truckPC(hours);
+System.out.println("PARKING CHARGE : "+decimal.format(truckPark));
+ }
+ else{
+ System.out.println("IVALID TYPE OF VEHICLE!");
+ }
+}
+
+
+public static double carPC(double hours){
+
+double carCharge=0;
+
+if(hours>=1){
+carCharge=20*hours;
+}
+return carCharge;
+}
+
+public static double  busPC(double hours){
+
+double busCharge=0;
+
+if(hours>=1){
+busCharge=35*hours;
+}
+return busCharge;
+}
+
+public static double  truckPC(double hours){
+
+double truckCharge=0;
+
+if(hours>=1){
+truckCharge=50*hours;
+}
+return truckCharge;
+ }
+}
+
+
+
